@@ -1,0 +1,28 @@
+<div class="mt-5">
+  <h1 class="text-center mb-3">Sign Up</h1>
+    <form style="margin: 0 auto; max-width: 70%" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <div class="row">
+        <div class="col-12">
+          <div class="mb-3">
+            <label for="" class="form-label">Email Address</label>
+            <input type="email" class="form-control" id="email" formControlName="email">
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12">
+            <label for="" class="form-label">Password</label>
+            <input type="email" class="form-control" id="password" formControlName="password">
+          </div>
+        </div>
+
+        <div class="text-center mt-3 mb-3">
+          <button class="btn btn-primary" type="submit">Login</button>
+        </div>
+        <p class="text-center">Already have an account? <a>Submit</a></p>
+      </div>
+      <div>
+        <p class="Text-center"> Don't have an account? Sign Up! <a>Signup</a></p>
+    </div>
+    </form>
+</div>
