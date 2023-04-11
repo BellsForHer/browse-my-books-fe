@@ -28,14 +28,14 @@ export class AuthService {
     this.http.get("http://localhost:3000/api/v1/users/me",
     {
       headers: {
-        authorization: 'Bearer ${token.value}'
+        authorization: `Bearer ${token.value}`
       }
     }).subscribe((res:any)=>{
       if(res.success){
         console.log(res.payload.user)
         this.userService.setCurrentUser(res.payload.user);
         console.log(res);
-        this.route.navigate(['/home'])
+        this.route.navigate(['/browse'])
       }
     })
 
@@ -46,7 +46,7 @@ export class AuthService {
 
     this.http.delete("http://localhost:3000/api/v1/users/logout", {
       headers: {
-        Authorization: 'Bearer ${token.value}'
+        Authorization: `Bearer ${token.value}`
       }
     }).subscribe((res:any)=>{
       if(res.success){

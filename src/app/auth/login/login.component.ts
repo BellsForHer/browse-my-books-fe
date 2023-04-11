@@ -28,7 +28,7 @@ export class LoginComponent implements OnInit {
     this.authService.login(loginUser).subscribe((res:any)=>{
       if(res.success) {
         this.userService.setCurrentUser(res.payload.user)
-        this.route.navigate(['/home'])
+        this.route.navigate(['/browse'])
         this.authService.setToken(res.payload.token)
         console.log(res)
       }

@@ -9,12 +9,12 @@
     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
   </div>
-  <div class="carousel-inner" style="max-height:300px">
-    <div class="carousel-item active">
-      <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.IjcYGheaXbeH1_70339jvQHaLH%26pid%3DApi&f=1&ipt=9ca5c309c02e2e4218c81fe7364d0fac1f7dfdfbcf556f9b89b3d468163a402b&ipo=images" class="d-block w-100" alt="...">
+  <div class="carousel-inner" style="max-height:300px" >
+    <div class="carousel-item active" >
+      <a href="" *ngFor="let book of suggestedBooks">{{book.image_path}}</a>
     </div>
-    <div class="carousel-item" style="max-height:300px">
-      <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.9R1bHYirfuXdohMSmKAYXAHaHa%26pid%3DApi&f=1&ipt=961f7946f1ae54f8d619994c2e93cfdb96af03f4dee62e60f40c44989b0408a4&ipo=images" class="d-block w-100" alt="...">
+    <div class="carousel-item" style="max-height:300px" *ngFor="let book of suggestedBooks">
+      <img src="{{book.image_path}}" class="d-block w-100" alt="...">
     </div>
     <div class="carousel-item" style="max-height:300px" >
       <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.1pvjohxni3m4U_TOtGJB_QHaLc%26pid%3DApi&f=1&ipt=a08c022d169517f48e26861bfb7259ed369b54c4fe797a9755730222db926a64&ipo=images" class="d-block w-100" alt="...">

@@ -7,7 +7,6 @@ import { SignupComponent } from './auth/signup/signup.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './auth/login/login.component';
-import { HomeComponent } from './home/home.component';
 import { NavComponent } from './shared/nav/nav.component';
 import { CommonModule } from '@angular/common';
 import { BrowseComponent } from './browse/browse.component';
@@ -18,7 +17,6 @@ import { LibraryComponent } from './library/library.component';
     AppComponent,
     SignupComponent,
     LoginComponent,
-    HomeComponent,
     NavComponent,
     BrowseComponent,
     LibraryComponent,
