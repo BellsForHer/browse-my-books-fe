@@ -12,7 +12,7 @@ import { BookService } from '../shared/services/book.service';
 })
 export class LibraryComponent implements OnInit {
 
-  Books = []
+  books = []
 
   constructor (private bookService:BookService) {}
 
@@ -21,7 +21,7 @@ export class LibraryComponent implements OnInit {
     this.bookService.fetchLibrary().subscribe((res:any)=>{
       console.log(res);
       if(res.success) {
-        this.bookService = res.payload;
+        this.books = res.payload;
       }
     })
   }

@@ -11,6 +11,8 @@ import { NavComponent } from './shared/nav/nav.component';
 import { CommonModule } from '@angular/common';
 import { BrowseComponent } from './browse/browse.component';
 import { LibraryComponent } from './library/library.component';
+import { BookDetailComponent } from './book-detail/book-detail.component';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +22,8 @@ import { LibraryComponent } from './library/library.component';
     NavComponent,
     BrowseComponent,
     LibraryComponent,
+    BookDetailComponent,
+    ProfileComponent,
   ],
   imports: [
     BrowserModule,

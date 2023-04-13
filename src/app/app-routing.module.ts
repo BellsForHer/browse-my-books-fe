@@ -5,6 +5,8 @@ import { LoginComponent } from './auth/login/login.component';
 import { BrowseComponent } from './browse/browse.component';
 import { LibraryComponent } from './library/library.component';
 import { CommonModule } from '@angular/common';
+import { BookDetailComponent } from './book-detail/book-detail.component';
+import { ProfileComponent } from './profile/profile.component';
 
 const routes: Routes = [
   {
@@ -22,6 +24,14 @@ const routes: Routes = [
   {
     path: "library",
     component: LibraryComponent
+  },
+  {
+    path: "books/:id",
+    component: BookDetailComponent
+  },
+  {
+    path: "profile/:username",
+    component: ProfileComponent
   }
 ];
 
