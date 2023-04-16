@@ -14,6 +14,7 @@ import { LibraryComponent } from './library/library.component';
 import { BookDetailComponent } from './book-detail/book-detail.component';
 import { ProfileComponent } from './profile/profile.component';
 import { CreateBookComponent } from './shared/models/create-book/create-book.component';
+import { EditBookComponent } from './shared/models/edit-book/edit-book.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { CreateBookComponent } from './shared/models/create-book/create-book.com
     BookDetailComponent,
     ProfileComponent,
     CreateBookComponent,
+    EditBookComponent,
   ],
   imports: [
     BrowserModule,

@@ -31,5 +31,12 @@ export class ProfileComponent implements OnInit{
         })
       })
 
+      this.bookService.fetchLibrary().subscribe((res:any)=>{
+        console.log(res);
+        if(res.success) {
+          this.books = res.payload;
+        }
+      })
+
 }
 }

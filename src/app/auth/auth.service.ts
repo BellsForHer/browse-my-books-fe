@@ -2,13 +2,14 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserService } from './user.service';
+import { BookService } from '../shared/services/book.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  constructor(private http:HttpClient, private route:Router, private userService:UserService) { }
+  constructor(private http:HttpClient, private route:Router, private userService:UserService, private bookService:BookService) { }
 
   signup(userSignup) {
     return this.http.post("http://localhost:3000/api/v1/users/create", userSignup)
@@ -34,6 +35,7 @@ export class AuthService {
       if(res.success){
         console.log(res.payload.user)
         this.userService.setCurrentUser(res.payload.user);
+        this.bookService.onSetBooks(res.payload.user.books)
         console.log(res);
         // this.route.navigate(['/browse'])
       }

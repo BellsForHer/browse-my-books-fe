@@ -8,6 +8,7 @@ import { BookService } from '../shared/services/book.service';
   styleUrls: ['./book-detail.component.css']
 })
 export class BookDetailComponent implements OnInit{
+  
   book: any = null;
   categories: any = null;
   creator: any = null;
@@ -16,6 +17,11 @@ export class BookDetailComponent implements OnInit{
   constructor(private activatedRoute: ActivatedRoute, private bookService: BookService) {}
 
   ngOnInit(): void {
+
+    this.bookService.detailBookSubject.subscribe((updatedBook:any)=>{
+      this.book = updatedBook;
+    })
+
     this.activatedRoute.params.subscribe((params)=>{
       const bookIds = params.id;
       this.bookService.fetchBook(bookIds).subscribe({

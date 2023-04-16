@@ -12,32 +12,31 @@ import { BookService } from '../shared/services/book.service';
 })
 export class LibraryComponent implements OnInit {
 
+  book: any = null;
   books = []
+  currentUser = null;
 
-  constructor (private bookService:BookService) {}
+  constructor (private bookService:BookService, private userService:UserService) {}
 
 
   ngOnInit(): void {
+    this.userService.currentUserSubject.subscribe((currentUser: any)=>{
+      this.currentUser = currentUser
+    })
     this.bookService.fetchLibrary().subscribe((res:any)=>{
       console.log(res);
       if(res.success) {
         this.books = res.payload;
       }
+      this.bookService.bookSubject
     })
   }
 
-  // onSubmit() {
-  //   const loginUser = this.loginForm.value;
+  onDeletedBook() {
+    this.bookService.deleteBook(this.book.id)
+  }
 
-  //   this.authService.login(loginUser).subscribe((res:any)=>{
-  //     if(res.success) {
-  //       this.userService.setCurrentUser(res.payload.user)
-  //       this.route.navigate(['/home'])
-  //       this.authService.setToken(res.payload.token)
-  //       console.log(res)
-  //     }
-  //   })
-  // }
+
 }
 
 

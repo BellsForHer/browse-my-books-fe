@@ -2,6 +2,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { AuthService } from '../auth.service';
+import { BookService } from 'src/app/shared/services/book.service';
 
 @Component({
   selector: 'app-signup',
@@ -19,7 +20,7 @@ export class SignupComponent implements OnInit {
     password_confirmation: new FormControl('')
   })
 
-  constructor (private authService:AuthService) {}
+  constructor (private authService:AuthService, private bookService:BookService) {}
 
   ngOnInit(): void {
 
