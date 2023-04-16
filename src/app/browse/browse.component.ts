@@ -9,6 +9,7 @@ import { BookService } from '../shared/services/book.service';
 export class BrowseComponent implements OnInit{
 
   suggestedBooks: any = []
+  categories: any = []
 
   constructor (private bookService:BookService) {}
 
@@ -17,10 +18,11 @@ export class BrowseComponent implements OnInit{
       console.log(res);
       if(res.success) {
         this.suggestedBooks = res.payload.suggest;
+        this.categories = res.payload.categories;
       }
     })
 
-    
+
 
   }
 

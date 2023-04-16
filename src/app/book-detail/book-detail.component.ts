@@ -9,17 +9,21 @@ import { BookService } from '../shared/services/book.service';
 })
 export class BookDetailComponent implements OnInit{
   book: any = null;
+  categories: any = null;
+  creator: any = null;
 
 
   constructor(private activatedRoute: ActivatedRoute, private bookService: BookService) {}
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe((params)=>{
-      const bookId = params.id;
-      this.bookService.fetchBook(bookId).subscribe({
+      const bookIds = params.id;
+      this.bookService.fetchBook(bookIds).subscribe({
         next: (res:any) => {
           console.log(res);
           this.book = res.payload.book;
+          this.categories = res.payload.book.categories;
+          this.creator = res.payload.blog.user;
         }
       })
     })

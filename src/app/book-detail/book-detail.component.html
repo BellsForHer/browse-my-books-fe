@@ -1,7 +1,18 @@
+
 <div *ngIf="book">
   <h1>{{book.title}}</h1>
-  <h2>{{book.sub_title}}</h2>
   <div>
-    <p>{{book.content}}</p>
+    <p>{{book.summary}}</p>
   </div>
+  <div>
+    <img src="{{book.image_path}}">
+  </div>
+  <div>
+    <span *ngFor="let category of categories">{{category.title}}</span>
+  </div>
+  <div>
+    <span>Posted by <a routerLink="/profile/{{creator.username}}">{{creator.username}}</a></span>
+  </div>
+
+
 </div>

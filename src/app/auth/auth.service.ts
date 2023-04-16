@@ -35,7 +35,7 @@ export class AuthService {
         console.log(res.payload.user)
         this.userService.setCurrentUser(res.payload.user);
         console.log(res);
-        this.route.navigate(['/browse'])
+        // this.route.navigate(['/browse'])
       }
     })
 
