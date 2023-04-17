@@ -12,7 +12,7 @@
       <h5 style="cursor:pointer" class="card-title" routerLink="/books/{{book.id}}">{{book.title}}</h5>
       <h6 class="card-text">{{book.sub_title}}</h6>
       <p class="card-text">{{book.summary}}</p>
-      <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+      <!-- <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p> -->
     </div>
     <ul class="list-group list-group-flush">
       <li class="list-group-item"><app-edit-book [book]="book"></app-edit-book></li>
@@ -23,7 +23,7 @@
     </div>
     <ul class="list-group list-group-flush">
       <li class="list-group-item">
-      <a class="btn btn-danger" (click)="onDeleteBook()">Delete Book</a>
+      <a class="btn btn-danger" (click)="onDeleteBook(book.id)">Delete Book</a>
       </li>
     </ul>
   </div>

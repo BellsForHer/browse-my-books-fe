@@ -1,49 +1,87 @@
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+<button
+  type="button"
+  class="btn btn-primary"
+  data-bs-toggle="modal"
+  [attr.data-bs-target]="'#book' + book.id"
+>
   Edit Book
 </button>
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div
+  class="modal fade"
+  id="book{{book.id}}"
+
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Edit Book</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-
-        </button>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
       </div>
       <div class="modal-body">
-        <div class="alert alert-danger" role="alert" *ngFor="let error of errors">
-          {{error}}
+        <div
+          class="alert alert-danger"
+          role="alert"
+          *ngFor="let error of errors"
+        >
+          {{ error }}
         </div>
         <form [formGroup]="bookFormGroup" (ngSubmit)="onSubmit()">
           <div class="mb-3">
             <label for="exampleInputEmail" class="form-label">Title</label>
-            <input type="text" class="form-control" formControlName="title"/>
+            <input type="text" class="form-control" formControlName="title" />
           </div>
           <div class="mb-3">
             <label for="exampleInputEmail" class="form-label">Summary</label>
-            <input type="text" class="form-control" formControlName="summary"/>
+            <input type="text" class="form-control" formControlName="summary" />
           </div>
           <div class="mb-3">
             <label for="exampleInputEmail" class="form-label">Image Path</label>
-            <input type="text" class="form-control" formControlName="image_path"/>
+            <input
+              type="text"
+              class="form-control"
+              formControlName="image_path"
+            />
           </div>
 
           <div class="mb-3">
-            <select class="form-select" multiple aria-label="multiple select example" formControlName="author_ids">
+            <select
+              class="form-select"
+              multiple
+              aria-label="multiple select example"
+              formControlName="author_ids"
+            >
               <option selected>Choose the author(s)</option>
-              <option value="{{author.id}}" *ngFor="let author of authors">{{author.first_name}} {{author.last_name}}</option>
-
+              <option value="{{ author.id }}" *ngFor="let author of authors">
+                {{ author.first_name }} {{ author.last_name }}
+              </option>
             </select>
           </div>
 
           <div class="mb-3">
-            <select class="form-select" multiple aria-label="multiple select example" formControlName="category_ids">
+            <select
+              class="form-select"
+              multiple
+              aria-label="multiple select example"
+              formControlName="category_ids"
+            >
               <option selected>Choose the genre(s)</option>
-              <option value="{{category.id}}" *ngFor="let category of categories">{{category.title}}</option>
-
+              <option
+                value="{{ category.id }}"
+                *ngFor="let category of categories"
+              >
+                {{ category.title }}
+              </option>
             </select>
           </div>
 
@@ -51,8 +89,14 @@
         </form>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" #closeBtn>Close</button>
-
+        <button
+          type="button"
+          class="btn btn-secondary"
+          data-bs-dismiss="modal"
+          #closeBtn
+        >
+          Close
+        </button>
       </div>
     </div>
   </div>

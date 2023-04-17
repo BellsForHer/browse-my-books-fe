@@ -75,7 +75,7 @@ export class BookService {
     this.onSetBooks(this.currentUserBooks)
    }
 
-   deleteBook(id) {
+   deleteBook(id:number) {
     const token = JSON.parse(localStorage.getItem('token'))
 
     return this.http.delete(`http://localhost:3000/api/v1/books/${id}`,{
