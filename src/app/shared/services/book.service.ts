@@ -32,6 +32,10 @@ export class BookService {
     })
   }
 
+  fetchCategories() {
+    return this.http.get(`${URL}/categories`)
+  }
+
 
   fetchBook(id:number) {
     return this.http.get(`${URL}/books/${id}`)

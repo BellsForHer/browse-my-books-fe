@@ -1,32 +1,36 @@
-<form class="d-flex mt-3">
+<form class="d-flex mt-3 mb-3">
   <input class="form-control me-2" type="search" placeholder="Search My Library" aria-label="Search">
   <button class="btn btn-outline-success" type="submit">Search</button>
 </form>
 
 <app-create-book></app-create-book>
 
-<div class="card-group mt-5">
-  <div class="card" *ngFor="let book of books" >
-    <img src="{{book.image_path}}" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 style="cursor:pointer" class="card-title" routerLink="/books/{{book.id}}">{{book.title}}</h5>
-      <h6 class="card-text">{{book.sub_title}}</h6>
-      <p class="card-text">{{book.summary}}</p>
-      <!-- <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p> -->
-    </div>
-    <ul class="list-group list-group-flush">
-      <li class="list-group-item"><app-edit-book [book]="book"></app-edit-book></li>
-    </ul>
-    <div class="card-body">
-      <a href="#" class="card-link">Genre</a>
-      <a href="#" class="card-link">Genre</a>
-    </div>
-    <ul class="list-group list-group-flush">
-      <li class="list-group-item">
-      <a class="btn btn-danger" (click)="onDeleteBook(book.id)">Delete Book</a>
-      </li>
-    </ul>
-  </div>
+<div class="row row-cols-1 row-cols-md-3 g-4">
+  <div class="card" *ngFor="let book of books">
+      <img  src="{{book.image_path}}" alt="...">
+      <div class="card-body">
+        <h5 class="card-title"routerLink="/books/{{book.id}}">{{book.title}}</h5>
+        <p class="card-text">{{book.authors}}</p>
+        <p class="card-text">{{book.summary}}</p>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item"><app-edit-book [book]="book"></app-edit-book></li>
+        </ul>
+        <div class="card-body">
+          <a href="#" class="card-link">{{book.categories}}</a>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+          <a class="btn btn-danger" (click)="onDeleteBook(book.id)">Delete Book</a>
+          </li>
+        </ul>
+      </div>
 
-</div>
+      </div>
+    </div>
+
+
+
+
+
+
 

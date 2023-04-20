@@ -12,54 +12,26 @@
   <br>
 
   <h5>Browse by Our Recommendations</h5>
-
-  <div id="carouselExampleIndicators" class="carousel slide">
-    <div class="carousel-indicators">
-      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-    </div>
-    <div class="carousel-inner"  style=" width:100%; height: 1000px !important;" >
-      <div class="carousel-item" [ngClass]="{'active': i === 0}" *ngFor="let book of suggestedBooks; let i = index" >
-        <img src="{{suggestedBooks[0].image_path}}" class="d-block w-100" alt="...">
-        <div class="carousel-caption d-none d-md-block">
-          <h5>First slide label</h5>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="card" [ngClass]="{'active': i === 0}" *ngFor="let book of suggestedBooks; let i = index">
+        <img src="{{suggestedBooks[0].image_path}}" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{suggestedBooks[0].title}}</h5>
+          <p class="card-text">{{suggestedBooks[0].summary}}</p>
+          <p>
+            <a routerLink="/books/{{suggestedBooks[0].id}}">Want to Learn More?</a>
+          </p>
         </div>
       </div>
-
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
-  </div>
-
-  <p>
-    <a routerLink="/books/{{suggestedBooks[0].id}}">Link</a>
-  </p>
-
-  <br>
-
-  <h5>Browse by Most Searched</h5>
-  <!-- <div class="justify-content-between">
-    <a class="p-2 link-secondary">{{creator.username}}</a>
-    <a href="" class="p-2 link-secondary">Username</a>
-    <a href="" class="p-2 link-secondary">Username</a>
-    <a href="" class="p-2 link-secondary">Username</a>
-    <a href="" class="p-2 link-secondary">Username</a>
-  </div> -->
-
 
   <br>
 
   <h5>Browse by User's Bookshelf</h5>
 
-  
+  <nav class="nav justify-content-between">
+    <a href="" class="p-2 link-secondary" *ngFor="let username of usernames">{{username.username}}</a>
+  </nav>
 
   <br>
 
@@ -68,3 +40,18 @@
   <nav class="nav justify-content-between">
     <a href="" class="p-2 link-secondary" *ngFor="let category of categories">{{category.title}}</a>
   </nav>
+
+  <br>
+  <h5>Browse by Most Searched</h5>
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="card" [ngClass]="{'active': i === 0}" *ngFor="let book of suggestedBooks; let i = index">
+        <img src="{{suggestedBooks[0].image_path}}" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{suggestedBooks[0].title}}</h5>
+          <p class="card-text">{{suggestedBooks[0].summary}}</p>
+          <p>
+            <a routerLink="/books/{{suggestedBooks[0].id}}">Want to Learn More?</a>
+          </p>
+        </div>
+      </div>
+    </div>

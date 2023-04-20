@@ -14,6 +14,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class LibraryComponent implements OnInit {
   books = [];
   currentUser = null;
+  categories = [];
 
   constructor(
     private bookService: BookService,
@@ -29,6 +30,7 @@ export class LibraryComponent implements OnInit {
       console.log(res);
       if (res.success) {
         this.books = res.payload;
+        this.categories = res.payload.categories;
       }
       this.bookService.bookSubject;
     });

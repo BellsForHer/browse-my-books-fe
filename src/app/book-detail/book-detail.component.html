@@ -1,18 +1,19 @@
-
-<div *ngIf="book">
-  <h1>{{book.title}}</h1>
-  <div>
-    <p>{{book.summary}}</p>
+<div class="card mb-3" *ngIf="book" style="max-width: 540px;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="{{book.image_path}}" class="img-fluid rounded-start" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">{{book.title}}</h5>
+        <p class="card-text">{{book.summary}}</p>
+        <p class="card-text"><small class="text-body-secondary"*ngFor="let category of categories">{{category.title}}</small></p>
+      </div>
+      <span class="card-body">Posted by <a routerLink="/profile/{{creator.username}}">{{creator.username}}</a></span>
+    </div>
   </div>
-  <div>
-    <img src="{{book.image_path}}">
-  </div>
-  <div>
-    <span *ngFor="let category of categories">{{category.title}}</span>
-  </div>
-  <div>
-    <span>Posted by <a routerLink="/profile/{{creator.username}}">{{creator.username}}</a></span>
-  </div>
-
-
 </div>
+
+
+
+
